@@ -8,6 +8,7 @@ namespace Patterns.Classes.FactoryMethod
 {
     /// <summary>
     /// This is exemplary product class for studying
+    ///
     /// </summary>
     public abstract class Product
     {
