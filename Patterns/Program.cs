@@ -7,6 +7,8 @@ using Patterns.Classes.FactoryMethod;
 using Patterns.Classes.AbstractFactory;
 using Patterns.Classes.Builder;
 using Patterns.Classes.Prototype;
+using Patterns.Classes.Singleton;
+using System.Threading;
 
 namespace Patterns
 {
@@ -49,11 +51,31 @@ namespace Patterns
             PrototypeClient client = new PrototypeClient();
             client.operation();
         }
+        /// <summary>
+        /// Вызов простого синглтона, плохо работает в многопоточной среде
+        /// </summary>
+        private static void SingletonRun()
+        {
+            Computer comp = new Computer();
+            comp.Launch("fucking OS");
+            Console.WriteLine(comp.Os.Name);
+        }
+        private static void SingletonMultiThreadRun()
+        {
+            (new Thread(() =>
+            {
+                Computer comp = new Computer();
+                comp.Launch("win10");
+                Console.WriteLine(comp.Os.Name);
+            })).Start() ;
+            Computer comp2 = new Computer();
+            comp2.Os = Os.getInstance("win8");
+            Console.WriteLine(comp2.Os.Name);
 
-
+        }
         static void Main(string[] args)
         {
-            PrototypeRun();
+            SingletonMultiThreadRun();
         }
 
     }
