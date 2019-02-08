@@ -43,9 +43,16 @@
   <ItemGroup>
     <Compile Include="Classes\AbstractFactory.cs" />
     <Compile Include="Classes\Builder.cs" />
+    <Compile Include="Classes\ChainOfResponsibility.cs" />
+    <Compile Include="Classes\Command.cs" />
     <Compile Include="Classes\FactoryMethod.cs" />
+    <Compile Include="Classes\Interpreter.cs" />
+    <Compile Include="Classes\Iterator.cs" />
+    <Compile Include="Classes\Observer.cs" />
     <Compile Include="Classes\Prototype.cs" />
     <Compile Include="Classes\Singleton.cs" />
+    <Compile Include="Classes\State.cs" />
+    <Compile Include="Classes\Strategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
